@@ -44,30 +44,31 @@ const bookStore = {
 }
 
 // 1. Select Title Element
-const bookStoreTitle = document.getElementById('header');
+const bookStoreTitle = document.getElementById("header");
 
 // 2. Change element to match bookstore name
 bookStoreTitle.textContent = bookStore.name;
 
 const oldItem = document.getElementById("delete-this")
-oldItem.remove
+oldItem.remove()
 
+const bookList = document.getElementById("book-list")
 // Loop through every book element in bookStore.books
-bookStore.books.forEach(book =>{
-  const bookContainer = document.createElement('li'); // li element
-  const bookTitle = document.createElement('h3');     // h3 element
-  const bookAuthor = document.createElement('p');     // p element
-  const bookImage = document.createElement('img');    // img element
+bookStore.books.forEach(book => {
+  const bookContainer = document.createElement("li"); // li element
+  const bookTitle = document.createElement("h3");     // h3 element
+  const bookAuthor = document.createElement("p");     // p element
+  const bookImage = document.createElement("img");    // img element
 
   // 2. Change the textContent/src to match book object
   bookTitle.textContent = book.title;        // Set title
   bookAuthor.textContent = book.author;      // Set author
-  bookImage.src = book.image;                // Set image url
+  bookImage.src = book.imageURL;                // Set image url
   
   // 3. Append book elements to bookList
-  bookContainer.appendChild(bookTitle)
-  bookContainer.appendChild(bookAuthor)
-  bookContainer.appendChild(bookImage)
+  bookContainer.appendChild(bookTitle);
+  bookContainer.appendChild(bookAuthor);
+  bookContainer.appendChild(bookImage);
   
   // Then append bookContainer to bookList
   bookList.appendChild(bookContainer);
