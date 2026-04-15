@@ -49,11 +49,11 @@ const bookStoreTitle = document.getElementById('header');
 // 2. Change element to match bookstore name
 bookStoreTitle.textContent = bookStore.name;
 
-// Step 3: Book Elements
+const oldItem = document.getElementById("delete-this")
+oldItem.remove
 
 // Loop through every book element in bookStore.books
-for (const book of bookStore.books) {
-  // 1. Create elements for each book
+bookStore.books.forEach(book =>{
   const bookContainer = document.createElement('li'); // li element
   const bookTitle = document.createElement('h3');     // h3 element
   const bookAuthor = document.createElement('p');     // p element
@@ -63,13 +63,13 @@ for (const book of bookStore.books) {
   bookTitle.textContent = book.title;        // Set title
   bookAuthor.textContent = book.author;      // Set author
   bookImage.src = book.image;                // Set image url
-  bookImage.alt = book.title;                // Good practice for images
-
+  
   // 3. Append book elements to bookList
-  bookContainer.append(bookTitle, bookAuthor, bookImage);
+  bookContainer.appendChild(bookTitle)
+  bookContainer.appendChild(bookAuthor)
+  bookContainer.appendChild(bookImage)
   
   // Then append bookContainer to bookList
-  bookList.append(bookContainer);
-
-
-};
+  bookList.appendChild(bookContainer);
+})
+ 
